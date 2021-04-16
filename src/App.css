@@ -1,9 +1,17 @@
+html , body {
+    width: 100% ;
+    overflow-x : hidden ;
+}
+
+
 .app {
     font-family: 'Poppins', sans-serif;
     background-color: white ;
     font-family: 'Open Sans', sans-serif;
+    
 }
 
+  
 /*
 - Pink: hsl(322, 100%, 66%)
 - Light Pink: hsl(321, 100%, 78%)
