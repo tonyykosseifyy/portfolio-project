@@ -115,3 +115,67 @@ export const SmallWrapper = styled.div`
         align-self: center ;
     }
 `
+
+
+export const InfoWrapper = styled.div`
+    display: flex ;
+    flex-direction: column ;
+    & > h1 {
+        font-weight: 700 ;
+        font-size: 2.7rem ;
+        color: #01262F ;
+        margin: 15px 0 ;
+    }
+    & > p {
+        font-size: 19px ;
+        font-weight: 600 ;
+        max-width: 80% ;
+    }
+    @media (max-width: 880px) {
+        text-align: center ;
+        align-items : center ; 
+        margin: 60px 0 ;
+        & > h1 {
+            font-size: 2.3rem ;
+        }
+    }
+
+`
+export const Wrapper = styled.main`
+    background-color: ${(props) => props.backgroundColor || 'white'} ;
+    margin: ${(props) => props.margin} ;
+    padding: ${(props) => !props.parent && '10vh 0'} ;
+    & > img {
+        min-width: 100% ;
+    }
+    & > img:nth-child(1) {
+        transform: ${(props) => props.parent && 'translateY(20px)' } ;
+    }
+    & > img:nth-child(3) {
+        transform: rotate(180deg) translateY(20px);
+    }
+    @media (max-width: 680px) {
+        padding: 2vh 0 ;
+    }
+`
+
+export const FlexContainer = styled.section`
+    width: 100% ;
+    display: flex ;
+    justify-content: space-between ;
+    padding: 3vh 7vw ;
+    align-items: center ; 
+    & > img {
+        max-width: 40% ;
+        object-fit: contain ;
+    }
+    @media (max-width: 880px) {
+        flex-direction: column-reverse ;
+        align-items: center ;
+        padding: 4vh 0 ;
+        & > img {
+            max-width: 60% ;
+        }
+    }
+`
+
