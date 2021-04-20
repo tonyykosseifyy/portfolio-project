@@ -82,6 +82,7 @@ function App() {
             </Wrapper>
 
             <Wrapper parent margin='40px 0' >
+                <img src={backgroundDesktopTop} alt='decoration' />
                 <Wrapper backgroundColor='#F6FBFF' >
                     <FlexContainer>
                     <img src={desktopUsers} alt='decoration' />
@@ -89,14 +90,22 @@ function App() {
                             <h1>Your Users</h1>
                             <p>
                                 it takes no time to integrate huddle with your app's authentication solution,
-                                This means once signed in 
+                                This means once signed in to your app , your users can start chat immediatly.
                             </p>
                         </InfoWrapper>
                         
                     </FlexContainer>
-                    
                 </Wrapper>
+                <img src={backgroundDesktopTop2} alt='decoration' />
             </Wrapper>
+
+            <Container >
+                <Title>Ready to build the Community?</Title>
+                <MainButton margin='30px 0' >
+                    Get started for free
+                </MainButton>
+            </Container>
+
         </div>
     )
 } ;

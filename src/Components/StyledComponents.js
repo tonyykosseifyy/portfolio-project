@@ -79,6 +79,7 @@ export const MainButton = styled.button`
     padding: 23px 30px ;
     font-weight: bold ;
     font-size: 20px ;
+    margin: ${(props) => props.margin || '0'} ;
     font-family: 'Poppins', sans-serif;
     @media (max-width: 680px) {
         min-width: 70vw ;
