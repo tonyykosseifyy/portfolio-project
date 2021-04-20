@@ -65,23 +65,38 @@ function App() {
             </Wrapper>
             
             <Wrapper parent margin='40px 0' >
-                <img src={backgroundDesktopTop} alt='decoration' />
-                <Wrapper backgroundColor='#F6FBFF' >
+                <Wrapper  >
                     <FlexContainer>
+                    <img src={desktopUsers} alt='decoration' />
                         <InfoWrapper>
                             <h1>Flowing Conversations</h1>
                             <p>
                                 You wouldn't paginate a conversation in real life, so why do it online? 
-                                
+                                Our threats have just-in-time loading for a more natural flow 
                             </p>
                         </InfoWrapper>
-                        <img src={desktopUsers} alt='decoration' />
+                        
                     </FlexContainer>
                     
                 </Wrapper>
-                <img src={backgroundDesktopTop2} alt='decoration' />
             </Wrapper>
 
+            <Wrapper parent margin='40px 0' >
+                <Wrapper backgroundColor='#F6FBFF' >
+                    <FlexContainer>
+                    <img src={desktopUsers} alt='decoration' />
+                        <InfoWrapper>
+                            <h1>Your Users</h1>
+                            <p>
+                                it takes no time to integrate huddle with your app's authentication solution,
+                                This means once signed in 
+                            </p>
+                        </InfoWrapper>
+                        
+                    </FlexContainer>
+                    
+                </Wrapper>
+            </Wrapper>
         </div>
     )
 } ;

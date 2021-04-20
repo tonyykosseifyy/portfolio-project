@@ -120,6 +120,7 @@ export const SmallWrapper = styled.div`
 export const InfoWrapper = styled.div`
     display: flex ;
     flex-direction: column ;
+    flex: .5 ;
     & > h1 {
         font-weight: 700 ;
         font-size: 2.7rem ;
@@ -168,6 +169,7 @@ export const FlexContainer = styled.section`
     & > img {
         max-width: 40% ;
         object-fit: contain ;
+        flex: .5 ;
     }
     @media (max-width: 880px) {
         flex-direction: column-reverse ;
