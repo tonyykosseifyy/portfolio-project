@@ -7,11 +7,21 @@ html , body {
 .app {
     font-family: 'Poppins', sans-serif;
     background-color: white ;
-    font-family: 'Open Sans', sans-serif;
-    
+    font-family: 'Raleway', sans-serif;
 }
 
-  
+.app video {
+  position: absolute;
+  top: 0 ;
+  right: 0 ;
+  left: 0 ;
+  width: 100vw ;
+  height: 100vh ;
+  z-index: -1 ;
+  object-fit: cover
+}
+
+
 /*
 - Pink: hsl(322, 100%, 66%)
 - Light Pink: hsl(321, 100%, 78%)
