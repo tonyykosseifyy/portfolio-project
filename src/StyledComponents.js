@@ -82,8 +82,9 @@ export const Navbar = styled.nav`
   z-index: 10000 ;
 `
 export const About = styled.section`
-  min-height: 200vh ;
   width: 100% ;
+  padding-top: 80px ;
+
 
 `
 export const Contact = styled.section`
@@ -108,4 +109,55 @@ export const Bar = styled.div`
   height: 5px ;
   background-color: ${(props) => props.color || 'white'} ;
   margin: 8px auto ;
+`
+
+export const AboutContainer = styled.div`
+    margin: 60px 0 ;
+    width: 100% ;
+    display  : grid;
+    grid-template-columns: repeat(4, 1fr) ;
+    grid-template-rows: 1fr ;
+    align-items: center ;
+    justify-items: center ;
+    padding: 20px 3vw ;
+    align-items: center ;
+    @media (max-width: 880px) {
+      grid-template-columns: repeat(2 , 1fr) ;
+      grid-template-rows: 1fr 1fr ;
+    }
+    @media (max-width: 680px) {
+      grid-template-columns: 1fr ;
+      grid-template-rows: repeat(4 , 1fr)
+    }
+`
+
+export const Container = styled.div`
+  margin : 15px 0 ;
+  place-self: stretch stretch ;
+  display: flex ;
+  flex-direction: column ;
+  align-items: center ;
+  text-align: center ;
+  & > h3 {
+    margin-top: 8px ;
+    font-size: 22px ;
+  }
+  & > p {
+    max-width: 80% ;
+    margin-top: 8px;
+  }
+`
+
+export const Hexagon = styled.div`
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  height: 140px ;
+  width: 160px ;
+  background: black ;
+  display: flex;
+  justify-content: center ;
+  align-items: center ;
+  color: white ;
+  & > svg {
+    transform: scale(3.5) ;
+  }
 `
