@@ -1,4 +1,4 @@
-import React, { createRef , useEffect } from 'react'
+import React, { createRef , useEffect , useState } from 'react'
 import './App.css' ;
 import './styles.sass' ;
 import video from './video.mp4' ;
@@ -12,12 +12,15 @@ import { BsClock } from 'react-icons/bs'
 import { DiResponsive } from 'react-icons/di' ;
 import { FaRegLightbulb } from 'react-icons/fa' ;
 import { IoIosRocket } from 'react-icons/io' ;
+import TextField from '@material-ui/core/TextField';
+
 
 function App() {
   const videoRef = createRef(null) ;
   useEffect(() => {
       videoRef.current.play() ;
   }, [])
+  const [ name , setName ] = useState('') ;
         return (
         <div className='app'>
           <Home id='home'>
@@ -57,8 +60,10 @@ function App() {
                       <BsClock />
                     </Hexagon>
                   </Flip>
+                  <Fade>
                     <h3>Fast</h3>
                     <p>Fast load times and lag free interaction, my highest priority.</p>
+                    </Fade>
                   </Container>
 
                   <Container>
@@ -67,9 +72,10 @@ function App() {
                         <DiResponsive />
                       </Hexagon>
                     </Flip>
+                    <Fade>
                       <h3>Responsive</h3>
                       <p>My layouts will work on any device, big or small.</p>
-
+                      </Fade>
                     </Container>
 
                     <Container>
@@ -78,9 +84,10 @@ function App() {
                           <FaRegLightbulb />
                         </Hexagon>
                       </Flip>
+                      <Fade>
                         <h3>Intuitive</h3>
                         <p>Strong preference for easy to use, intuitive UX/UI.</p>
-
+                      </Fade>
                       </Container>
                       <Container>
                         <Flip>
@@ -88,9 +95,10 @@ function App() {
                             <IoIosRocket />
                           </Hexagon>
                         </Flip>
+                          <Fade>
                           <h3>Dynamic</h3>
                           <p>Websites don't have to be static, I love making pages come to life.</p>
-
+                          </Fade>
                         </Container>
 
               </AboutContainer>
@@ -105,6 +113,9 @@ function App() {
                 <Fade left >
                   <Bar color='white'/>
                 </Fade>
+
+                <TextField id="standard-basic" color='secondary' required label="Name" value={name} onChange={(e) => setName(e.target.value)} />
+
             </Contact>
         </div>
 

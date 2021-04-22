@@ -65,6 +65,11 @@ export const Link = styled.a`
   &:hover {
     color: #832D21;
   }
+  @media (max-width: 680px) {
+      font-size: 14px ;
+      margin: 0 ;
+      padding: 0 ;
+  }
 
 `
 
@@ -80,6 +85,10 @@ export const Navbar = styled.nav`
   display: flex ;
   padding-left: 20px ;
   z-index: 10000 ;
+  @media (max-width: 680px) {
+    justify-content : space-evenly ;
+    padding-left: 0 ;
+  }
 `
 export const About = styled.section`
   width: 100% ;
@@ -91,7 +100,7 @@ export const Contact = styled.section`
   clip-path: polygon(0 0, 50% 25%, 100% 0, 100% 100%, 0 100%, 0% 60%, 0 0);
   height: 500px ;
   width: 100% ;
-  background: black ;
+  background: #1F1214 ;
   padding-top: 200px;
 `
 
@@ -127,7 +136,8 @@ export const AboutContainer = styled.div`
     }
     @media (max-width: 680px) {
       grid-template-columns: 1fr ;
-      grid-template-rows: repeat(4 , 1fr)
+      grid-template-rows: repeat(4 , 1fr) ;
+      padding: 0px 3vw ;
     }
 `
 
@@ -146,13 +156,16 @@ export const Container = styled.div`
     max-width: 80% ;
     margin-top: 8px;
   }
+  @media (max-width: 680px) {
+    margin: 30px 0 ;
+  }
 `
 
 export const Hexagon = styled.div`
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   height: 140px ;
   width: 160px ;
-  background: black ;
+  background: #1F1214 ;
   display: flex;
   justify-content: center ;
   align-items: center ;
