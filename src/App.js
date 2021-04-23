@@ -4,7 +4,8 @@ import './styles.sass' ;
 import video from './video.mp4' ;
 import { Title , TitleSpan , Home , MainButton ,
   Navbar , Link , About , Contact ,SectionTitle ,
-  Bar,Hexagon, AboutContainer , Container , ContactPhrase , SubmitButton} from './StyledComponents' ;
+  Bar,Hexagon, AboutContainer , Container , ContactPhrase ,
+  SubmitButton , Projects } from './StyledComponents' ;
 import { FaArrowRight } from 'react-icons/fa' ;
 import Fade from 'react-reveal/Fade' ;
 import Flip from 'react-reveal/Flip';
@@ -121,6 +122,17 @@ function App() {
               </AboutContainer>
             </About>
 
+            <Projects id='projects'>
+              <Fade left>
+                <SectionTitle color='black'>
+                  Projects
+                </SectionTitle>
+              </Fade>
+              <Fade left >
+                <Bar color='black'/>
+              </Fade>
+            </Projects>
+
             <Contact id='contact'>
                 <Fade left>
                   <SectionTitle color='white'>
@@ -160,13 +172,12 @@ function App() {
                     required
                     name="message"
                     style={{
-                        margin: '15px 0' ,
+                        margin: '25px 0' ,
                         maxWidth: '100%' ,
                         minHeight: '100px' ,
                         maxHeight: '220px',
                         background: 'transparent' ,
                         color: 'white',
-                        border: '1px solid white' ,
                         outline: 'none',
                         padding: '10px 10px',
                         fontFamily: 'Poppins, sans-serif',

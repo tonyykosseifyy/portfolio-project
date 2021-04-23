@@ -93,9 +93,12 @@ export const Navbar = styled.nav`
 export const About = styled.section`
   width: 100% ;
   padding-top: 80px ;
-
-
 `
+export const Projects = styled.section`
+  width: 100% ;
+  margin-top: 100px ;
+`
+
 export const Contact = styled.section`
   clip-path: polygon(0 0, 50% 25%, 100% 0, 100% 100%, 0 100%, 0% 60%, 0 0);
   width: 100% ;
@@ -113,7 +116,7 @@ export const Contact = styled.section`
     }
   }
   & > form > .MuiFormControl-root {
-    margin: 10px 0 ;
+    margin: 5px 0 ;
   }
   & .MuiFormLabel-root {
     color: white ;
@@ -124,6 +127,10 @@ export const Contact = styled.section`
   }
   & textarea {
     overflow-y : auto ;
+    border: 1px solid white
+  }
+  & textarea:focus {
+    border: 2.3px solid white ;
   }
   & textarea::placeholder {
     color: white;
