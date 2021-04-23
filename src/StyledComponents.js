@@ -100,7 +100,7 @@ export const Contact = styled.section`
   clip-path: polygon(0 0, 50% 25%, 100% 0, 100% 100%, 0 100%, 0% 60%, 0 0);
   width: 100% ;
   background: #1F1214 ;
-  padding-top: 200px;
+  padding-top: 250px;
   & > form {
     display: flex ;
     flex-direction: column ;
@@ -226,7 +226,7 @@ export const ContactPhrase = styled.p`
   text-align: center ;
   color: white ;
   font-family: 'Poppins', sans-serif;
-  margin-top: 50px 
+  margin-top: 50px
 `
 export const SubmitButton = styled.button`
   background-color: transparent ;

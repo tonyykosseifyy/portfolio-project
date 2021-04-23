@@ -14,6 +14,8 @@ import { FaRegLightbulb } from 'react-icons/fa' ;
 import { IoIosRocket } from 'react-icons/io' ;
 import TextField from '@material-ui/core/TextField';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import emailjs from 'emailjs-com';
+import Snackbar from '@material-ui/core/Snackbar';
 
 function App() {
   const videoRef = createRef(null) ;
@@ -21,7 +23,21 @@ function App() {
       videoRef.current.play() ;
   }, [])
   const [ name , setName ] = useState('') ;
-  const [ email , setEmail ] = useState('')
+  const [ email , setEmail ] = useState('');
+  const [ open , setOpen] = useState(false) ;
+  const [ message , setMessage ] = useState('')
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_vl137q4', 'template_xgu4yiq', e.target, 'user_rbTnaa0RNXVWWQvqJDOzW')
+      .then((result) => {
+          setOpen(true) ;
+          setMessage('Your message was sent successfully !')
+      }, (error) => {
+        setOpen(true) ;
+        setMessage('An unexpected errro occured , Try resending the message')
+      });
+  }
         return (
         <div className='app'>
           <Home id='home'>
@@ -114,10 +130,10 @@ function App() {
                 <Fade left >
                   <Bar color='white'/>
                 </Fade>
-                <Fade left>
+                <Fade bottom>
                   <ContactPhrase>Have a question or want to work together?</ContactPhrase>
                 </Fade>
-                <form onSubmit={(e) => e.preventDefault()} >
+                <form onSubmit={(e) => handleSubmit(e)} >
                   <TextField
                     id="Name Input"
                     color='secondary'
@@ -125,6 +141,7 @@ function App() {
                     label="Name"
                     value={name}
                     type='text'
+                    name="user_name"
                     onChange={(e) => setName(e.target.value)}
                   />
                   <TextField
@@ -134,12 +151,14 @@ function App() {
                     label="Email"
                     value={email}
                     type='email'
+                    name="user_email"
                     onChange={(e) => setEmail(e.target.value)}
                   />
                   <TextareaAutosize
                     aria-label="Message"
                     placeholder="Message"
                     required
+                    name="message"
                     style={{
                         margin: '15px 0' ,
                         maxWidth: '100%' ,
@@ -159,6 +178,14 @@ function App() {
                   <SubmitButton type='Submit' >
                     Submit
                   </SubmitButton>
+                  <Snackbar
+                    anchorOrigin={{ vertical:'top', horizontal: 'right' }}
+                    open={open}
+                    onClose={() => setOpen(false)}
+                    message={message}
+                    key='message'
+                    style={{top: '54px'}}
+                  />
                 </form>
             </Contact>
         </div>

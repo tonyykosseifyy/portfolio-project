@@ -18,7 +18,12 @@
   object-fit: cover
 }
 
-
+.app .MuiSnackbarContent-root {
+  font-family: 'Poppins', sans-serif;
+}
+.app .MuiSnackbarContent-root {
+    background-color: #4CAF50 ;
+}
 /*
 - Pink: hsl(322, 100%, 66%)
 - Light Pink: hsl(321, 100%, 78%)
