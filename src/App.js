@@ -13,7 +13,7 @@ import { DiResponsive } from 'react-icons/di' ;
 import { FaRegLightbulb } from 'react-icons/fa' ;
 import { IoIosRocket } from 'react-icons/io' ;
 import TextField from '@material-ui/core/TextField';
-
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
 function App() {
   const videoRef = createRef(null) ;
@@ -21,6 +21,7 @@ function App() {
       videoRef.current.play() ;
   }, [])
   const [ name , setName ] = useState('') ;
+  const [ email , setEmail ] = useState('')
         return (
         <div className='app'>
           <Home id='home'>
@@ -113,9 +114,46 @@ function App() {
                 <Fade left >
                   <Bar color='white'/>
                 </Fade>
-
-                <TextField id="standard-basic" color='secondary' required label="Name" value={name} onChange={(e) => setName(e.target.value)} />
-
+                <form onSubmit={(e) => e.preventDefault()} >
+                  <TextField
+                    id="Name Input"
+                    color='secondary'
+                    required
+                    label="Name"
+                    value={name}
+                    type='text'
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                  <TextField
+                    id="Email Input"
+                    color='secondary'
+                    required
+                    label="Email"
+                    value={email}
+                    type='email'
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <TextareaAutosize
+                    aria-label="Message"
+                    placeholder="Message"
+                    required
+                    style={{
+                        margin: '15px 0' ,
+                        maxWidth: '100%' ,
+                        minHeight: '100px' ,
+                        maxHeight: '220px',
+                        background: 'transparent' ,
+                        color: 'white',
+                        border: '1px solid white' ,
+                        outline: 'none',
+                        padding: '10px 10px',
+                        fontFamily: 'Poppins, sans-serif',
+                        fontWeight: 'light',
+                        fontSize: '16.3px',
+                        overflow: 'auto !important',
+                    }}
+                  />
+                </form>
             </Contact>
         </div>
 

@@ -98,10 +98,58 @@ export const About = styled.section`
 `
 export const Contact = styled.section`
   clip-path: polygon(0 0, 50% 25%, 100% 0, 100% 100%, 0 100%, 0% 60%, 0 0);
-  height: 500px ;
+  height: auto ;
   width: 100% ;
   background: #1F1214 ;
   padding-top: 200px;
+  & > form {
+    display: flex ;
+    flex-direction: column ;
+    align-items: :center ;
+    justify-content: center ;
+    width: 50% ;
+    margin: 50px auto ;
+    @media (max-width: 680px) {
+        width: 80% ;
+    }
+  }
+  & > form > .MuiFormControl-root {
+    margin: 10px 0 ;
+  }
+  & .MuiFormLabel-root {
+    color: white ;
+  }
+  & .MuiInputBase-input {
+    border-bottom: 2px solid white ;
+    color: white ;
+  }
+  & textarea {
+    overflow-y : auto ;
+  }
+  & textarea::placeholder {
+    color: white;
+  }
+  & textarea::-webkit-scrollbar {
+    width: 10px;
+    height: 7px !important
+  }
+  & textarea::-webkit-scrollbar:hover {
+    cursor: default ;
+  }
+  & textarea::-webkit-scrollbar-thumb {
+     background-color: #832D21;
+     border-radius: 15px;
+     transition: .3s ease-in-out ;
+  }
+  & textarea::-webkit-scrollbar-thumb:hover {
+    background-color: #4A0D02 ;
+  }
+  & textarea::-webkit-scrollbar-track {
+     background: #1F1214 ;
+     border-radius: 6px;
+  }
+
+  }
 `
 
 export const SectionTitle = styled.h1`
