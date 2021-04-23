@@ -5,7 +5,7 @@ import video from './video.mp4' ;
 import { Title , TitleSpan , Home , MainButton ,
   Navbar , Link , About , Contact ,SectionTitle ,
   Bar,Hexagon, AboutContainer , Container , ContactPhrase ,
-  SubmitButton , Projects } from './StyledComponents' ;
+  SubmitButton , Projects, CloseButton , Chip} from './StyledComponents' ;
 import { FaArrowRight } from 'react-icons/fa' ;
 import Fade from 'react-reveal/Fade' ;
 import Flip from 'react-reveal/Flip';
@@ -17,6 +17,14 @@ import TextField from '@material-ui/core/TextField';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import emailjs from 'emailjs-com';
 import Snackbar from '@material-ui/core/Snackbar';
+import {
+  ModalProvider,
+  Modal,
+  useModal,
+  ModalTransition,
+} from 'react-simple-hook-modal';
+import 'react-simple-hook-modal/dist/styles.css';
+import { GrClose } from 'react-icons/gr' ;
 
 function App() {
   const videoRef = createRef(null) ;
@@ -24,6 +32,7 @@ function App() {
       videoRef.current.play() ;
   }, [])
   const [ name , setName ] = useState('') ;
+  const { isModalOpen, openModal, closeModal } = useModal();
   const [ email , setEmail ] = useState('');
   const [ open , setOpen] = useState(false) ;
   const [ message , setMessage ] = useState('')
@@ -131,6 +140,18 @@ function App() {
               <Fade left >
                 <Bar color='black'/>
               </Fade>
+              <ModalProvider>
+                <Modal
+                  id="any-unique-identifier"
+                  isOpen={isModalOpen}
+                  transition={ModalTransition.SCALE}
+                >
+
+                </Modal>
+                <CloseButton display={isModalOpen ? "block" : "none"} onClick={closeModal}><GrClose /></CloseButton>
+                <button onClick={openModal}>Open</button>
+                <Chip>yeahhh asd asd</Chip>
+              </ModalProvider>
             </Projects>
 
             <Contact id='contact'>

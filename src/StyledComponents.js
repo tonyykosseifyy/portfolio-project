@@ -10,7 +10,7 @@ export const Title = styled.h1`
       text-align: center ;
   }
   @media (max-width:400px) {
-        font-size: 2rem ;
+        font-size: 1.7rem ;
   }
 `
 
@@ -39,6 +39,11 @@ export const MainButton = styled.a`
   margin: 30px 0 ;
   cursor: pointer ;
   transition: .3s ease-in-out ;
+  @media (max-width: 300px) {
+      width: 80% ;
+      margin: 30px auto ;
+      padding: 10px 0 ;
+  }
   &:hover {
     background-color: #832D21 ;
     border-color: #832D21 ;
@@ -99,6 +104,60 @@ export const Projects = styled.section`
   margin-top: 100px ;
 `
 
+export const CloseButton = styled.button`
+  position: fixed ;
+  display: ${(props) => props.display } ;
+  top: 95px ;
+  left: 60px ;
+  z-index: 50000 ;
+  background: transparent ;
+  cursor : pointer ;
+  & > svg {
+    transform: scale(3) ;
+  }
+`
+export const Chip = styled.button`
+  cursor: pointer ;
+  background-color: black ;
+  color: white ;
+  position: relative ;
+  min-height: 50px ;
+  min-width: 140px ;
+  z-index: 1 ;
+  padding: 10px 10px ;
+  transition: .3s ease-in-out ;
+  &::before , &::after {
+    content: '' ;
+    position: absolute ;
+    background-color: red ;
+    height: 50% ;
+    transition: .3s ease-in-out ;
+    width: 0 ;
+    z-index: -1 ;
+  }
+  &:before {
+    top: 0;
+    left: 0;
+    right: auto;
+  }
+  &:after {
+    bottom: 0;
+    right: 0;
+    left: auto;
+  }
+  &:hover {
+    color: black ;
+    &:before {
+      width: 100%;
+      right: 0;
+      left: auto;
+    }
+    &:after {
+      width: 100%;
+      left: 0;
+      right: auto;
+    }
+`
 export const Contact = styled.section`
   clip-path: polygon(0 0, 50% 25%, 100% 0, 100% 100%, 0 100%, 0% 60%, 0 0);
   width: 100% ;
