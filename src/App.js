@@ -4,7 +4,7 @@ import './styles.sass' ;
 import video from './video.mp4' ;
 import { Title , TitleSpan , Home , MainButton ,
   Navbar , Link , About , Contact ,SectionTitle ,
-  Bar,Hexagon, AboutContainer , Container} from './StyledComponents' ;
+  Bar,Hexagon, AboutContainer , Container , ContactPhrase , SubmitButton} from './StyledComponents' ;
 import { FaArrowRight } from 'react-icons/fa' ;
 import Fade from 'react-reveal/Fade' ;
 import Flip from 'react-reveal/Flip';
@@ -114,6 +114,9 @@ function App() {
                 <Fade left >
                   <Bar color='white'/>
                 </Fade>
+                <Fade left>
+                  <ContactPhrase>Have a question or want to work together?</ContactPhrase>
+                </Fade>
                 <form onSubmit={(e) => e.preventDefault()} >
                   <TextField
                     id="Name Input"
@@ -153,6 +156,9 @@ function App() {
                         overflow: 'auto !important',
                     }}
                   />
+                  <SubmitButton type='Submit' >
+                    Submit
+                  </SubmitButton>
                 </form>
             </Contact>
         </div>

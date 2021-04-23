@@ -98,7 +98,6 @@ export const About = styled.section`
 `
 export const Contact = styled.section`
   clip-path: polygon(0 0, 50% 25%, 100% 0, 100% 100%, 0 100%, 0% 60%, 0 0);
-  height: auto ;
   width: 100% ;
   background: #1F1214 ;
   padding-top: 200px;
@@ -221,4 +220,30 @@ export const Hexagon = styled.div`
   & > svg {
     transform: scale(3.5) ;
   }
+`
+
+export const ContactPhrase = styled.p`
+  text-align: center ;
+  color: white ;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 50px 
+`
+export const SubmitButton = styled.button`
+  background-color: transparent ;
+  padding: 12px 0 ;
+  width: 50% ;
+  color: white ;
+  border: 1px solid white ;
+  outline: none ;
+  cursor: pointer ;
+  transition: .3s ease-in-out ;
+  font-weight: bold ;
+  margin: 10px auto ;
+  font-family: 'Poppins', sans-serif;
+  text-transform: upper-case;
+  &:hover {
+    background-color: #832D21 ;
+    border-color: #832D21 ;
+  }
+
 `
